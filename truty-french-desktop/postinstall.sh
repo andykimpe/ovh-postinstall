@@ -1,6 +1,7 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
-rm -f /etc/apt/sources.list
+rm -rf /etc/apt/sources.list /etc/apt/sources.list.d/
+mkdir /etc/apt/sources.list.d/
 wget https://github.com/andykimpe/ovh-postinstall/raw/master/truty-french-desktop/sources.list -P /etc/apt/
 apt-get update
 apt-get -y dist-upgrade

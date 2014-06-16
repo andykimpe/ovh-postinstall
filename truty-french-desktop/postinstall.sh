@@ -6,8 +6,10 @@ wget https://github.com/andykimpe/ovh-postinstall/raw/master/truty-french-deskto
 wget https://github.com/andykimpe/ovh-postinstall/raw/master/truty-french-desktop/andykimpe-freshplayerplugin-daily-trusty.list -P /etc/apt/sources.list.d/
 wget https://github.com/andykimpe/ovh-postinstall/raw/master/truty-french-desktop/andykimpe-skype-trusty.list -P /etc/apt/sources.list.d/
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 99B2B9B3274A7DA0
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 5A9A06AEF9CB8DB0
+dpkg --add-architecture i386
 apt-get update
 apt-get -y --force-yes -f dist-upgrade
 apt-get -y autoremove
-apt-get -y --force-yes -f install ubuntu-desktop gnome-session-fallback language-pack-fr language-pack-fr-base language-pack-gnome-fr language-pack-gnome-fr-base ubuntu-restricted-extras freshplayerplugin skype
+apt-get -y --force-yes -f install ubuntu-desktop gnome-session-fallback language-pack-fr language-pack-fr-base language-pack-gnome-fr language-pack-gnome-fr-base ubuntu-restricted-extras freshplayerplugin skype wine1.7 playonlinux
 echo "OK"

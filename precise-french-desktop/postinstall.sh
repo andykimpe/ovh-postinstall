@@ -8,6 +8,7 @@ wget https://github.com/andykimpe/ovh-postinstall/raw/master/precise-french-desk
 wget https://github.com/andykimpe/ovh-postinstall/raw/master/precise-french-desktop/ubuntu-wine-ppa-precise.list -P /etc/apt/sources.list.d/
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 99B2B9B3274A7DA0
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 5A9A06AEF9CB8DB0
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 16126D3A3E5C1192
 dpkg --add-architecture i386
 apt-get update
 apt-get -y dist-upgrade

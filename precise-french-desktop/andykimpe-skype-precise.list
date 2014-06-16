@@ -1,1 +1,2 @@
-
+deb http://ppa.launchpad.net/andykimpe/skype/ubuntu precise main
+deb-src http://ppa.launchpad.net/andykimpe/skype/ubuntu precise main

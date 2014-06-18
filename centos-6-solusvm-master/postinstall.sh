@@ -1,5 +1,4 @@
 #!/bin/bash
-#please beta dot use
 rm -f /etc/yum.repos.d/CentOS-Base.repo
 wget --no-check-certificate https://github.com/andykimpe/ovh-postinstall/raw/master/centos-6/CentOS-Base.repo -P /etc/yum.repos.d/
 yum -y update
@@ -47,3 +46,12 @@ $TAR_PATH vxzf /usr/local/solusvm/tmp/installscripts.tar.gz -C /usr/local/solusv
 chown root:root /usr/local/solusvm/tmp/.install/*
 chmod +x /usr/local/solusvm/tmp/.install/*
 $PHP_PATH /usr/local/solusvm/tmp/.install/master --virt=openvz > /dev/null 2>&1
+chmod 777 /boot/grub/grub.conf
+cat > /boot/grub/grub.conf <<EOF
+default=0
+timeout=5
+
+	title linux centos6_64
+	kernel /boot/vmlinuz-2.6.32-042stab090.4 root=/dev/sda1  ro
+	root (hd0,0)
+EOF

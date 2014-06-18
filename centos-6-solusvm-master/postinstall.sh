@@ -28,13 +28,13 @@ option="2"
 $YUM_PATH -y install glibc glibc-devel glibc-devel.i686 perl php php-cli php-common 
 if [ -d /usr/lib64 ]; then
 #64 bit
-$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86_64.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz
-$WGET_PATH $MIRROR/solusvm/loaders/php.ini.64.${CENT_VERSION} -O /etc/php.ini
+$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86_64.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz >> $PRELOG 2>&1
+$WGET_PATH $MIRROR/solusvm/loaders/php.ini.64.${CENT_VERSION} -O /etc/php.ini >> $PRELOG 2>&1
 else
 #32bit
-$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz
-$WGET_PATH $MIRROR/solusvm/loaders/php.ini.32.${CENT_VERSION} -O /etc/php.ini
-fi  	  
+$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz >> $PRELOG 2>&1
+$WGET_PATH $MIRROR/solusvm/loaders/php.ini.32.${CENT_VERSION} -O /etc/php.ini >> $PRELOG 2>&1
+fi 	  
 userdel solusvm 
 adduser -d /usr/local/solusvm -s /sbin/nologin solusvm
 $WGET_PATH https://github.com/andykimpe/ovh-postinstall/raw/master/centos-6-solusvm-master/soluslabs.repo -O /etc/yum.repos.d/soluslabs.repo

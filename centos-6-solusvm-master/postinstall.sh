@@ -17,8 +17,6 @@ PRELOG=/tmp/preinstall.log
 TMP1=/tmp/version.txt
 TMP2=/tmp/type.txt
 MIRROR=http://files.soluslabs.com
-
-
 setenforce 0
 $CLEAR_PATH
   $ECHO_PATH " |                                                                |"

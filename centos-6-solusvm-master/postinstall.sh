@@ -25,24 +25,24 @@ SVM_VERSION=`cat /tmp/svmversion.txt`
 $ECHO_PATH "http://files.eu.fr.soluslabs.com" > /tmp/filemirror.txt
 MIRROR=`cat /tmp/filemirror.txt`
 option="2"
-$YUM_PATH -y install glibc glibc-devel glibc-devel.i686 perl php php-cli php-common >> $PRELOG 2>&1 
+$YUM_PATH -y install glibc glibc-devel glibc-devel.i686 perl php php-cli php-common 
 if [ -d /usr/lib64 ]; then
 #64 bit
-$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86_64.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz >> $PRELOG 2>&1
-$WGET_PATH $MIRROR/solusvm/loaders/php.ini.64.${CENT_VERSION} -O /etc/php.ini >> $PRELOG 2>&1
+$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86_64.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz
+$WGET_PATH $MIRROR/solusvm/loaders/php.ini.64.${CENT_VERSION} -O /etc/php.ini
 else
 #32bit
-$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz >> $PRELOG 2>&1
-$WGET_PATH $MIRROR/solusvm/loaders/php.ini.32.${CENT_VERSION} -O /etc/php.ini >> $PRELOG 2>&1
+$WGET_PATH $MIRROR/solusvm/loaders/ioncube_loaders_lin_x86.tar.gz -O /usr/local/solusvm/tmp/ioncube_loaders.tar.gz
+$WGET_PATH $MIRROR/solusvm/loaders/php.ini.32.${CENT_VERSION} -O /etc/php.ini
 fi  	  
-userdel solusvm >> $PRELOG 2>&1
-adduser -d /usr/local/solusvm -s /sbin/nologin solusvm >> $PRELOG 2>&1
-$WGET_PATH https://github.com/andykimpe/ovh-postinstall/raw/master/centos-6-solusvm-master/soluslabs.repo -O /etc/yum.repos.d/soluslabs.repo >> $PRELOG 2>&1
-$YUM_PATH clean all >> $PRELOG 2>&1
-$TAR_PATH vxzf /usr/local/solusvm/tmp/ioncube_loaders.tar.gz -C /etc/ >> $PRELOG 2>&1
-$WGET_PATH $MIRROR/solusvm/installer/v3/installscripts.tar.gz -O /usr/local/solusvm/tmp/installscripts.tar.gz >> $PRELOG 2>&1
+userdel solusvm 
+adduser -d /usr/local/solusvm -s /sbin/nologin solusvm
+$WGET_PATH https://github.com/andykimpe/ovh-postinstall/raw/master/centos-6-solusvm-master/soluslabs.repo -O /etc/yum.repos.d/soluslabs.repo
+$YUM_PATH clean all
+$TAR_PATH vxzf /usr/local/solusvm/tmp/ioncube_loaders.tar.gz -C /etc/
+$WGET_PATH $MIRROR/solusvm/installer/v3/installscripts.tar.gz -O /usr/local/solusvm/tmp/installscripts.tar.gz
 $MKDIR_PATH -p /usr/local/solusvm/tmp/.install/
-$TAR_PATH vxzf /usr/local/solusvm/tmp/installscripts.tar.gz -C /usr/local/solusvm/tmp/.install/ >> $PRELOG 2>&1
+$TAR_PATH vxzf /usr/local/solusvm/tmp/installscripts.tar.gz -C /usr/local/solusvm/tmp/.install/
 chown root:root /usr/local/solusvm/tmp/.install/*
 chmod +x /usr/local/solusvm/tmp/.install/*
 $PHP_PATH /usr/local/solusvm/tmp/.install/master --virt=openvz

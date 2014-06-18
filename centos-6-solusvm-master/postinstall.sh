@@ -55,3 +55,5 @@ timeout=5
 	kernel /boot/vmlinuz-2.6.32-042stab090.4 root=/dev/sda1  ro
 	root (hd0,0)
 EOF
+echo "OK"
+exit

@@ -23,7 +23,6 @@ function _header() {
 	$PRINTF_PATH " | :: SolusVM Installer                       v3.1.0 (2014/03/06) |\n"
 	$PRINTF_PATH " o----------------------------------------------------------------o\n"	
 }
-_info_msg
 if [ `id -u` != "0" ]; then
 $ECHO_PATH "You need to be be the root user to run this installer.\nWe also suggest you use a direct root login, not su -, sudo etc..."
 exit

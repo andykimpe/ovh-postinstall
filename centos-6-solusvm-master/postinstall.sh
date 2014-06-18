@@ -18,16 +18,8 @@ TMP1=/tmp/version.txt
 TMP2=/tmp/type.txt
 MIRROR=http://files.soluslabs.com
 
-function _header() {
-	$PRINTF_PATH " o----------------------------------------------------------------o\n"
-	$PRINTF_PATH " | :: SolusVM Installer                       v3.1.0 (2014/03/06) |\n"
-	$PRINTF_PATH " o----------------------------------------------------------------o\n"	
-}
-if [ `id -u` != "0" ]; then
-$ECHO_PATH "You need to be be the root user to run this installer.\nWe also suggest you use a direct root login, not su -, sudo etc..."
-exit
-fi
-setenforce 0 > $PRELOG 2>&1
+
+setenforce 0
 if [ ! -e /usr/bin/yum ]; then
 $ECHO_PATH " Yum not found. You must install yum first"
 exit

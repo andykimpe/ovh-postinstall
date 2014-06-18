@@ -18,7 +18,7 @@ TMP1=/tmp/version.txt
 TMP2=/tmp/type.txt
 MIRROR=http://files.soluslabs.com
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
-setenforce 0
+setenforce 0 > /dev/null 2>&1
 $ECHO_PATH "6" > /tmp/version.txt
 CENT_VERSION=`cat /tmp/version.txt`
 $ECHO_PATH "1" > /tmp/svmversion.txt		
@@ -46,4 +46,4 @@ $MKDIR_PATH -p /usr/local/solusvm/tmp/.install/
 $TAR_PATH vxzf /usr/local/solusvm/tmp/installscripts.tar.gz -C /usr/local/solusvm/tmp/.install/
 chown root:root /usr/local/solusvm/tmp/.install/*
 chmod +x /usr/local/solusvm/tmp/.install/*
-$PHP_PATH /usr/local/solusvm/tmp/.install/master --virt=openvz
+$PHP_PATH /usr/local/solusvm/tmp/.install/master --virt=openvz > /dev/null 2>&1

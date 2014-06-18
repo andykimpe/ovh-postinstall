@@ -18,7 +18,6 @@ TMP1=/tmp/version.txt
 TMP2=/tmp/type.txt
 MIRROR=http://files.soluslabs.com
 
-}
 function _header() {
 	$PRINTF_PATH " o----------------------------------------------------------------o\n"
 	$PRINTF_PATH " | :: SolusVM Installer                       v3.1.0 (2014/03/06) |\n"

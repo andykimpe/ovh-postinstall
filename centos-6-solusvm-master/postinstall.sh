@@ -17,6 +17,7 @@ PRELOG=/tmp/preinstall.log
 TMP1=/tmp/version.txt
 TMP2=/tmp/type.txt
 MIRROR=http://files.soluslabs.com
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 setenforce 0
 $ECHO_PATH "6" > /tmp/version.txt
 CENT_VERSION=`cat /tmp/version.txt`

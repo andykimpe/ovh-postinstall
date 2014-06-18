@@ -20,41 +20,7 @@ MIRROR=http://files.soluslabs.com
 
 
 setenforce 0
-if [ ! -e /usr/bin/yum ]; then
-$ECHO_PATH " Yum not found. You must install yum first"
-exit
-fi
-if [ -e /usr/local/solusvm/www ]; then
-_header
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |    /!\  SolusVM is already installed on this server!  /!\      |"
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |          Hit [ENTER] to continue or ctrl+c to exit             |"
-$ECHO_PATH " |                                                                |"
-$PRINTF_PATH " o----------------------------------------------------------------o\n"
-read entcs
-fi
-if [ -e /usr/local/cpanel ]; then
-_header
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |     /!\  cPanel is already installed on this server!  /!\      |"
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |         SolusVM can't be installed on a cPanel server!         |"
-$ECHO_PATH " |                                                                |"
-$PRINTF_PATH " o----------------------------------------------------------------o\n"
-exit;
-fi 
-if [ -e /usr/local/directadmin ]; then
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |   /!\  DirectAdmin is already installed on this server!  /!\   |"
-$ECHO_PATH " |                                                                |"
-$ECHO_PATH " |       SolusVM can't be installed on a DirectAdmin server!      |"
-$ECHO_PATH " |                                                                |"
-$PRINTF_PATH " o----------------------------------------------------------------o\n"
-exit;
-fi    
 $CLEAR_PATH
- _header
   $ECHO_PATH " |                                                                |"
   $ECHO_PATH " |      What Operating System is installed on this server?        |"
   $ECHO_PATH " |                                                                |"

@@ -55,10 +55,11 @@ cat > /boot/grub/grub.conf <<EOF
 default=0
 timeout=5
 
-title linux solusvm-master-vz_64
-kernel $kernel1 root=/dev/sda1 ro
-root (hd0,0)
-initrd $kernel2
+
+      title linux solusvm-master-vz_64
+      kernel $kernel1 root=/dev/sda1 ro
+      root (hd0,0)
+      initrd $kernel2
 EOF
 echo "OK"
 exit

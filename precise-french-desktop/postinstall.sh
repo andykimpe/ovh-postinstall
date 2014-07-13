@@ -18,4 +18,5 @@ apt-get -y install ubuntu-desktop gnome-session-fallback language-pack-fr langua
 dpkg --add-architecture i386
 apt-get update
 apt-get -y install freshplayerplugin skype wine1.7 playonlinux openjdk-7-jre icedtea-7-plugin vlc
+apt-get clean
 echo "OK"

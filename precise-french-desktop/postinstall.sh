@@ -15,13 +15,6 @@ apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get -y install ubuntu-desktop gnome-session-fallback language-pack-fr language-pack-fr-base language-pack-gnome-fr language-pack-gnome-fr-base ubuntu-restricted-extras chromium-browser
-if [ "$(uname -m)" == "x86_64" ]
-then
-dpkg --add-architecture i386
-echo "64 bit"
-else
-echo "32 bit"
-fi
 apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
@@ -37,4 +30,6 @@ apt-get -y autoremove
 apt-get clean
 useradd -d /home/desktop -p desktop desktop
 echo "desktop:desktop" | chpasswd
+mkdir /home/desktop
+cp -R /etc/skel/* /home/desktop
 echo "OK"

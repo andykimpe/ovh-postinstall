@@ -32,4 +32,6 @@ useradd -d /home/desktop -p desktop desktop
 echo "desktop:desktop" | chpasswd
 mkdir /home/desktop
 cp -R /etc/skel/* /home/desktop
+chown desktop -R /home/desktop/
+chown desktop -R /home/desktop/*
 echo "OK"

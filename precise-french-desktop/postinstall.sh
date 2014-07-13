@@ -30,6 +30,6 @@ apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get clean
-adduser --disabled-password --home /home/desktop desktop
+useradd -d /home/desktop -p desktop desktop
 echo "desktop:desktop" | chpasswd
 echo "OK"

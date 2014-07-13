@@ -30,6 +30,11 @@ apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get clean
-#useradd -d /home/desktop -p desktop desktop
-#echo "desktop:desktop" | chpasswd
+apt-get -y install x2goserver
+apt-get update
+apt-get -y dist-upgrade
+apt-get -y autoremove
+apt-get clean
+useradd -d /home/desktop -p desktop desktop
+echo "desktop:desktop" | chpasswd
 echo "OK"

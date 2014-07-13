@@ -24,6 +24,7 @@ apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get -y install freshplayerplugin skype wine1.7 playonlinux openjdk-7-jre icedtea-7-plugin vlc
+apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get clean

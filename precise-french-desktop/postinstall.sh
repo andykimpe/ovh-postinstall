@@ -18,7 +18,9 @@ apt-get -y install ubuntu-desktop gnome-session-fallback language-pack-fr langua
 if [ "$(uname -m)" == "x86_64" ]
 then
 dpkg --add-architecture i386
-echo 64 bit
+echo "64 bit"
+else
+echo "32 bit"
 fi
 apt-get update
 apt-get -y dist-upgrade

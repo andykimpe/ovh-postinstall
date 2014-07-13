@@ -45,12 +45,12 @@ deb-src http://ubuntu.mirrors.ovh.net/ftp.ubuntu.com/ubuntu/ precise-security mu
 ## 'partner' repository.
 ## This software is not part of Ubuntu, but is offered by Canonical and the
 ## respective vendors as a service to Ubuntu users.
-deb http://archive.canonical.com/ubuntu precise partner
-deb-src http://archive.canonical.com/ubuntu precise partner
+# deb http://archive.canonical.com/ubuntu precise partner
+# deb-src http://archive.canonical.com/ubuntu precise partner
 
 ## Uncomment the following two lines to add software from Ubuntu's
 ## 'extras' repository.
 ## This software is not part of Ubuntu, but is offered by third-party
 ## developers who want to ship their latest software.
-deb http://extras.ubuntu.com/ubuntu precise main
-deb-src http://extras.ubuntu.com/ubuntu precise main
+# deb http://extras.ubuntu.com/ubuntu precise main
+# deb-src http://extras.ubuntu.com/ubuntu precise main

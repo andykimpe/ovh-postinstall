@@ -17,7 +17,11 @@ apt-get -y autoremove
 apt-get -y install ubuntu-desktop gnome-session-fallback language-pack-fr language-pack-fr-base language-pack-gnome-fr language-pack-gnome-fr-base ubuntu-restricted-extras chromium-browser
 dpkg --add-architecture i386
 apt-get update
+apt-get -y dist-upgrade
+apt-get -y autoremove
 apt-get -y install freshplayerplugin skype wine1.7 playonlinux openjdk-7-jre icedtea-7-plugin vlc
+apt-get -y dist-upgrade
+apt-get -y autoremove
 apt-get clean
 adduser --disabled-password --home /home/desktop desktop
 echo "desktop:desktop" | chpasswd

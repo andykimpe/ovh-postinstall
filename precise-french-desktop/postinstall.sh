@@ -19,4 +19,6 @@ dpkg --add-architecture i386
 apt-get update
 apt-get -y install freshplayerplugin skype wine1.7 playonlinux openjdk-7-jre icedtea-7-plugin vlc
 apt-get clean
+adduser --disabled-password --home /home/desktop desktop
+echo "desktop:desktop" | chpasswd
 echo "OK"

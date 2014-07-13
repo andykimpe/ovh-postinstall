@@ -15,7 +15,11 @@ apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove
 apt-get -y install ubuntu-desktop gnome-session-fallback language-pack-fr language-pack-fr-base language-pack-gnome-fr language-pack-gnome-fr-base ubuntu-restricted-extras chromium-browser
+if [ "$(uname -m)" == "x86_64" ]
+then
 dpkg --add-architecture i386
+echo 64 bit
+fi
 apt-get update
 apt-get -y dist-upgrade
 apt-get -y autoremove

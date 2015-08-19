@@ -30,7 +30,13 @@ sed -i "s|MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-
 sed -i "s|KexAlgorithms diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1|#KexAlgorithms diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1|" /etc/ssh/sshd_config
 # redémarage du serveur ssh
 service ssh restart
-
+# installation de traduction
+apt-get -y install myspell-en-au wbritish openoffice.org-hyphenation hunspell-en-ca myspell-en-za
+apt-get -y install gimp-help-en mythes-fr hunspell-fr mythes-en-au thunderbird-locale-en-us
+apt-get -y install libreoffice-l10n-en-gb myspell-en-gb hyphen-en-us libreoffice-help-en-us
+apt-get -y install libreoffice-help-en-gb language-pack-gnome-fr thunderbird-locale-en-gb
+apt-get -y install libreoffice-l10n-en-za thunderbird-locale-en hyphen-fr wfrench
+apt-get -y install mythes-en-us aspell-fr libreoffice-help-fr
 
 
 

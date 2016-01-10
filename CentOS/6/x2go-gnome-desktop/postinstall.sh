@@ -13,5 +13,5 @@ yum -y install x2goserver x2goserver-xsession x2goclient
 service sshd restart
 adduser desktop
 echo "desktop:desktop" | chpasswd
-reboot
+echo "OK"
 exit

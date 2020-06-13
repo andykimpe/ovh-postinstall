@@ -186,6 +186,7 @@ tar --numeric-owner --ignore-failed-read -cvzpf /root/ubuntu-18.04-x86_64-minima
 cd
 rm -rf /newroot/
 mkdir -p /newroot/
+cp /usr/share/debootstrap/scripts/bionic /usr/share/debootstrap/scripts/focal
 debootstrap --include ubuntu-minimal  --components="main,restricted,universe,multiverse" --arch=amd64 focal /newroot/ http://fr.archive.ubuntu.com/ubuntu
 cat > /newroot/etc/apt/sources.list <<EOF
 deb http://fr.archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse 

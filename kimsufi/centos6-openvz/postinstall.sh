@@ -17,6 +17,7 @@ wget -O /boot/grub/grub.conf https://github.com/andykimpe/ovh-postinstall/raw/ma
 chmod 777 /boot/grub/grub.conf
 sed -i "s|KERNEL1|$kernel1|" "/boot/grub/grub.conf"
 sed -i "s|KERNEL2|$kernel2|" "/boot/grub/grub.conf"
+sed -i "s|/dev/sda1|/dev/sda1|" "/boot/grub/grub.conf"
 mkdir -p /vz/template/cache
 rm -rf /vz/template/cache/*
 #centos 6

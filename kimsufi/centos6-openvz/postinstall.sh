@@ -29,8 +29,8 @@ cp /boot/grub/grub.conf /boot/grub/grub.conf_disabled_by_openvz_install
 chmod 777 /boot/grub/grub.conf
 wget -O /boot/grub/grub.conf https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/grub.conf
 chmod 777 /boot/grub/grub.conf
-sed -i "s|!KERNEL1!|$kernel1|" "/boot/grub/grub.conf"
-sed -i 's/kernel1/$kernel1/g' "/boot/grub/grub.conf"
+sed -i "s|KERNEL1|$kernel1|" "/boot/grub/grub.conf"
+sed -i "s/KERNEL2|$kernel2|" "/boot/grub/grub.conf"
 cat > /boot/grub/grub.conf <<EOF
 default=0
 timeout=5

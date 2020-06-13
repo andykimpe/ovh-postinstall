@@ -88,7 +88,7 @@ resolve_deps() {
     yum -y install ruby wget
     is_command_present gem
     if [ $? -ne 0 ]; then
-      yum -y install ruby-devel ruby-docs ruby-ri ruby-irb ruby-rdoc
+      #yum -y install ruby-devel ruby-docs ruby-ri ruby-irb ruby-rdoc
       wget -nc -P /tmp/ $RUBYGEMS_URL
       ARCHIVE_NAME=`echo $RUBYGEMS_URL | sed 's/.\+\///g'`
       DIR_NAME=`echo $ARCHIVE_NAME | sed 's/.tgz//g'`

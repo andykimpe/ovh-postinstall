@@ -33,5 +33,10 @@ wget -P /vz/template/cache https://github.com/andykimpe/ovh-postinstall/releases
 wget -P /vz/template/cache https://github.com/andykimpe/ovh-postinstall/releases/download/1.0/ubuntu-20.04-x86_64-minimal.tar.gz
 wget -O - https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/ai.sh | sh
 wget -O /etc/modprobe.d/openvz.conf https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/openvz.conf
+service lighttpd stop
+chkconfig lighttpd off
+yum -y install svmstack-nginx svmstack-nginx-legacy-master-config
+service svmstack-nginx restart
+service svmstack-fpm restart
 echo "OK"
 exit

@@ -23,7 +23,7 @@ NO_ARGS=0
 helpdesk="https://bugs.openvz.org"
 
 # Update checker URL
-checksite="https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/"
+checksite="https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos-7-virtualizo/"
 checkfile="version.dat"
 checkurl="$checksite$checkfile"
 scriptname="vzdeploy"

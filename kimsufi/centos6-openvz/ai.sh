@@ -85,7 +85,8 @@ resolve_deps() {
   if [ "$DISTRIB_ID" = "RedHat" -o "$DISTRIB_ID" = "CentOS" ]; then
     VEROSFULL=$(sed 's/^.*release //;s/ (Fin.*$//' /etc/redhat-release)
     VEROS=${VEROSFULL:0:1} # return 6, 7 or 8
-    yum -y install ruby wget
+    yum -y install epel-release
+    yum -y install yum -y ruby install rubygems ruby-sqlite3 rubygem-rake
     is_command_present gem
     if [ $? -ne 0 ]; then
       #yum -y install ruby-devel ruby-docs ruby-ri ruby-irb ruby-rdoc

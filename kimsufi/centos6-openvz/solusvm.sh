@@ -46,5 +46,14 @@ service svmstack-fpm restart
 mkdir -p /var/www/html/clients/modules/servers/licensing/
 wget -O /var/www/html/clients/modules/servers/licensing/clean.php https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/clean.php
 wget -O /var/www/html/clients/modules/servers/licensing/slbs_verify_license.php https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/slbs_verify_license.php
+echo "127.0.0.1 licensing1.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing2.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing3.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing4.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing5.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing6.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 licensing7.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 www.soluslabs.net" >> /etc/hosts
+echo "127.0.0.1 soluslabs.net" >> /etc/hosts
 echo "OK"
 exit

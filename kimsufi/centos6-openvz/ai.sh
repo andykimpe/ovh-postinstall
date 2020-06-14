@@ -98,7 +98,7 @@ resolve_deps() {
       rm -f /tmp/$ARCHIVE_NAME
       rm -rf /tmp/$DIR_NAME
     fi
-	if [[ "$VEROS" = "6" ]] ; then
+	if [[ "$VEROS" = "0" ]] ; then
 	wget https://rubygems.org/downloads/sqlite3-1.3.11.gem
 	gem install --local sqlite3-1.3.11.gem
 	rm -f sqlite3-1.3.11.gem

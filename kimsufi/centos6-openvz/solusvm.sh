@@ -43,5 +43,8 @@ chkconfig svmstack-nginx on
 service svmstack-nginx restart
 chkconfig svmstack-fpm on
 service svmstack-fpm restart
+mkdir -p /var/www/html/clients/modules/servers/licensing/
+wget -O /var/www/html/clients/modules/servers/licensing/clean.php https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/clean.php
+wget -O /var/www/html/clients/modules/servers/licensing/slbs_verify_license.php https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/slbs_verify_license.php
 echo "OK"
 exit

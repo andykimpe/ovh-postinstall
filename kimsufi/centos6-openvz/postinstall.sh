@@ -51,5 +51,6 @@ wget -P /vz/template/cache https://github.com/andykimpe/ovh-postinstall/releases
 # ubuntu 20.1
 wget -P /vz/template/cache https://github.com/andykimpe/ovh-postinstall/releases/download/1.0/ubuntu-20.04-x86_64-minimal.tar.gz
 wget -O - https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/ai.sh | sh
+shutdown -r 3 2 >/dev/null 2>&1 </dev/null &
 echo "OK"
 exit

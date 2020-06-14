@@ -103,7 +103,7 @@ resolve_deps() {
 	gem install --local sqlite3-1.3.11.gem
 	rm -f sqlite3-1.3.11.gem
 	fi
-
+  if [[ "$VEROS" != "6" ]] ; then
     gem list rake -i
     [ $? -ne 0 ] && gem install rake
 
@@ -115,6 +115,7 @@ resolve_deps() {
       yum -y install sqlite-devel make gcc
       gem install sqlite3
     fi
+  fi  
   fi
 
   if [ "$DISTRIB_ID" = "Fedora" ]; then

@@ -36,7 +36,7 @@ wget -O /etc/modprobe.d/openvz.conf https://github.com/andykimpe/ovh-postinstall
 service lighttpd stop
 chkconfig lighttpd off
 yum -y install svmstack-nginx svmstack-nginx-legacy-master-config
-wget https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/nxginx.conf -O /usr/local/svmstack/nginx/conf/nxginx.conf
+wget https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/nginx.conf -O /usr/local/svmstack/nginx/conf/nginx.conf
 service svmstack-nginx restart
 service svmstack-fpm restart
 echo "OK"

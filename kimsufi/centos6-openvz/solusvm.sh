@@ -37,7 +37,11 @@ service lighttpd stop
 chkconfig lighttpd off
 yum -y install svmstack-nginx svmstack-nginx-legacy-master-config
 wget https://github.com/andykimpe/ovh-postinstall/raw/master/kimsufi/centos6-openvz/nginx.conf -O /usr/local/svmstack/nginx/conf/nginx.conf
+chkkconfig httpd on
+service httpd restart
+chkconfig svmstack-nginx on
 service svmstack-nginx restart
+chkconfig svmstack-fpm on
 service svmstack-fpm restart
 echo "OK"
 exit

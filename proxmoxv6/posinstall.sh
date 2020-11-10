@@ -1,6 +1,14 @@
 #!/bin/bash
 apt-get update -q >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade >/dev/null 2>&1
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+apt-get update -q >/dev/null 2>&1
+rm -f /etc/security/acces.conf
+rm -f /etc/crontab
+rm -f /etc/ssh/ssh_config
+rm -f /etc/bind/named.conf.options
+rm -f 
+DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade >/dev/null 2>&1
 IP=$(wget -qO- ifconfig.me)
 IFS=. read -a ArrIP<<<"$IP"
 GATEWAY=${ArrIP[0]}.${ArrIP[1]}.${ArrIP[2]}.254

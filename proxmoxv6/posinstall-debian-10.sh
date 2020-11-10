@@ -1,10 +1,8 @@
-#!/bin/bash
-apt-get update -q >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -qy dist-upgrade >/dev/null 2>&1
 IP=$(wget -qO- ifconfig.me)
 IFS=. read -a ArrIP<<<"$IP"
 GATEWAY=${ArrIP[0]}.${ArrIP[1]}.${ArrIP[2]}.254
-INTERFACES=ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}'
+INTERFACES=$(ip link | awk -F: '$0 !~ "lo|vir|wl|^[^0-9]"{print $2;getline}')
 HOSTNAME=$(hostname -A)
 HOST=$(hostname)
 cat > /etc/network/interfaces <<EOF
@@ -20,7 +18,7 @@ iface lo inet loopback
 auto vmbr0
 iface vmbr0 inet static
         address $IP/24
-        gateway $GATEWAY
+        gateway $GATEWAY/24
         bridge_ports$INTERFACES
         bridge_stp off
         bridge_fd 0
@@ -57,5 +55,4 @@ wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -qO /etc/apt/
 chmod +r /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
 apt-get update -q >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive  apt-get -qy install proxmox-ve postfix open-iscsi >/dev/null 2>&1
-echo "OK"
 exit
